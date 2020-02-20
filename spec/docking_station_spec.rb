@@ -21,7 +21,7 @@ describe DockingStation do
 		expect { my_station.release_bike }.to raise_error(StandardError, 'Sorry, no working bikes available')
 	end
 	it "refuses to dock bikes when full capacity" do
-		my_station = DockingStation.new(20)
+		my_station = DockingStation.new
 		bike = double("Bike", :dock_or_not => true)
 		expect { my_station.dock_bike(bike) }.to raise_error(StandardError, 'Sorry, we ran out of space')
 	end
